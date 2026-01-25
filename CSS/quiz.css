@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Cairo:wght@200..1000&family=Rubik+Storm&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    font-family: 'Cairo', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-weight: 900;
+    user-select: none;
+}
+
+:root {
+    --main--color: #2f4f44;
+    --second--color: rgba(255 127 80);
+    --text--color: rgb(255, 255, 255);
+    --text2--color: rgb(255, 255, 255);
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 15px 20px;
+    color: var(--text--color);
+    font-size: 18px;
+    z-index: 99999;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    top: 0;
+}
+
+header a {
+    color: var(--main--color);
+    font-weight: 1000;
+    position: relative;
+    margin-top: -11px;
+}
+
+header .logo::before {
+    content: "في الفيزياء";
+    position: absolute;
+    top: 21px;
+    font-size: 11px;
+    right: 0;
+    font-weight: 900;
+    color: #006943;
+}
+
+header i {
+    margin-left: 7px;
+    font-size: 1.5em;
+    color: var(--main--color);
+    text-decoration: underline;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -3px;
+}
+
+.logo-button {
+    display: none;
+    background-color: var(--main--color);
+    color: var(--text2--color);
+    padding: 6px 20px;
+    border: none;
+    border-radius: 1000px;
+    transition: 0.2s;
+    font-weight: 900;
+    margin: 0;
+    font-size: 13px;
+    border: 2px solid var(--main--color);
+}
+
+.logo-button:hover {
+    border: 2px solid var(--main--color);
+    background-color: white;
+    color: var(--main--color);
+}
+
+.btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-left: -15px;
+    background-color: #000000;
+    color: #f5f5f5;
+    transform: scale(0.8);
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+}
+
+.btn .icon {
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.btn .text {
+    transform: translateX(70px);
+}
+
+.btn:hover .icon {
+    width: 175px;
+}
+
+.btn:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active .icon {
+    transform: scale(0.85);
+}
+
+.settings-box {
+    padding: 15px;
+    position: fixed;
+    transition: all 0.3s;
+    left: -250px;
+    top: 69px;
+    z-index: 99;
+    width: 250px;
+    height: calc(100vh - 69px);
+    background-color: rgb(255, 255, 255);
+    text-align: end;
+}
+
+.full-close {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.753);
+    width: 100%;
+    display: none;
+    z-index: 9;
+    top: 0;
+    height: 100%;
+}
+
+.settings-box .i {
+    width: 50%;
+    color: #467464;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+    align-items: center;
+}
+
+.settings-box p {
+    margin: 20px 0;
+    margin-top: 30px;
+    background-color: #00694323;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+    width: calc(100% + 0px);
+    border-radius: 4px;
+    padding: 10px 15px;
+    color: #ffffff;
+    background: url(../Pictures/mathboard\ -\ Menu.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 10px #00000091;
+    border: 3px solid rgb(249, 255, 251);
+    outline: 3px solid #000000;
+}
+
+.settings-box span {
+    font-size: 0.85em;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.settings-box a {
+    width: 100%;
+    display: block;
+    background-color: white;
+    border-radius: 4px;
+    color: #2d4b41;
+    margin: 7px auto;
+    border: none;
+    border-bottom: 3px solid #2d4b41;
+    padding: 5px 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.settings-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #2d4b41;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    border: 2px solid #2d4b41;
+    color: white;
+    border-radius: 4px;
+}
+
+footer {
+    width: 100%;
+    padding-bottom: 40px;
+    padding-top: 120px;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    background: url(../Pictures/mathboard\ -\ Footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+footer .info {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    text-align: end;
+}
+
+footer .info p {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: -35px;
+}
+
+footer .info a {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 900;
+    font-size: 14px;
+    position: relative;
+}
+
+footer .info a i {
+    margin-left: 5px;
+    margin-top: 5px;
+    position: absolute;
+    top: 4px;
+}
+
+footer .info .cards {
+    margin: 5px;
+    display: block;
+}
+
+footer h3 {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-top: 17px;
+    font-family: "Bitcount Single", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+footer .Logo {
+    position: absolute;
+    left: calc(50% - 25px);
+    top: 60px;
+    transform: translate(-50%, -50%) scale(1.6);
+}
+
+footer .Logo a {
+    color: rgb(255, 255, 255);
+}
+
+footer .Logo i {
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    position: absolute;
+    top: 8px;
+    margin-left: 5px;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+footer .Logo::before {
+    content: "في الفيزياء";
+    position: absolute;
+    top: 21px;
+    width: 50px;
+    font-size: 9px;
+    right: 0;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+footer h3 a {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-top: 17px;
+    font-family: "Bitcount Single", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.main {
+    width: 100%;
+    padding-top: 85px;
+    height: fit-content;
+}
+
+.timer {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    background-color: #000000;
+    padding: 0 25px;
+    height: 45px;
+    padding-bottom: 2px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.progress {
+    width: 100%;
+    position: absolute;
+    height: 3px;
+    bottom: 0;
+    right: 0;
+    background-color: #6d66f3;
+    border-radius: 100px;
+}
+
+.question {
+    display: none;
+    height: fit-content;
+}
+
+.question p {
+    width: 100%;
+    direction: rtl;
+    font-size: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin: -13px 0;
+    margin-top: -17px;
+}
+
+.question-num {
+    position: absolute;
+    right: 20px;
+    font-size: 11px;
+    bottom: 7px;
+    color: rgba(0, 0, 0, 0.95);
+}
+
+.question img {
+    width: 95%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.main .info {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .info button {
+    width: 120px;
+    border-radius: 4px;
+    margin: 0 5px;
+    font-size: 17px;
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.main .info button i {
+    margin: 0 5px;
+}
+
+.question button {
+    font-size: 17px;
+    margin: 20px auto;
+    display: block;
+    background-color: #434085;
+    border: none;
+    color: white;
+    border-radius: 1000px;
+    padding: 5px 25px;
+    padding-left: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: -70px;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    border: 1px solid black;
+}
+
+.question button i {
+    margin-right: 10px;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 30px;
+}
+
+#confirmBox {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 15px;
+    direction: rtl;
+    z-index: 999999999999999999;
+    transform: translate(-50%, 0%);
+    width: 95%;
+    height: 100px;
+    padding: 20px;
+    font-size: 23px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    background-color: #000000;
+    color: white;
+    padding-bottom: 110px;
+    text-align: center;
+}
+
+#confirmBox .div {
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+#confirmBox button {
+    color: black;
+    margin: 0 3px;
+    margin-top: 10px;
+    border-radius: 7px;
+    padding: 5px 20px;
+    padding-left: 25px;
+    border: none;
+    background-color: white;
+}
+
+#confirmBox button i {
+    margin: 0 5px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.question label {
+    display: flex;
+    width: 95%;
+    padding: 5px 20px;
+    margin: -10px auto;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.question label:has(input[type="radio"]:checked) {
+    border: 2px solid #435dd8;
+    transform: scale(1.01);
+    color: #435dd8;
+    box-shadow: 0px 2px 5px rgba(67, 92, 216, 0.2);
+}
+
+.post {
+    width: 100%;
+    height: 100vh;
+    padding-top: 85px;
+}
+
+.card-quiz {
+    width: 90%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    color: white;
+    border-radius: 10px;
+    height: 220px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+    background: url(../Pictures/sky.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-quiz h2 {
+    font-size: 28px;
+    text-shadow: 2px 3px 1px #006943;
+}
+
+.card-quiz h3 {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.card-info a {
+    color: white;
+    padding: 5px 20px;
+    border-radius: 6px;
+    background-color: #006943;
+    font-size: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4) inset;
+}
+
+.card-info p {
+    display: none;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #000000;
+}
+
+#lastscoresign {
+    margin-right: 5px;
+}
+
+#red_line {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#red_line::after {
+    content: "غير متوفر حالياً";
+    text-shadow: 0px 0px 10px black;
+    font-size: 1.5em;
+}

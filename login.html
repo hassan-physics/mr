@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الخبير</title>
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="">
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="./index.html">منصة الخبير</a>
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+    </header>
+    <div class="okmassage" id="okmassage">
+        تمت إرسال بياناتك بنجاح
+    </div>
+    <div class="okmassage" id="nomassage">
+        تأكد من صحة البيانات
+    </div>
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+                <div class="flip-card__inner">
+                    <div class="flip-card__back">
+                        <div class="title">تسجيل الدخول</div>
+                        <form id="contactForm" class="flip-card__form">
+                            <input required id="UserName" class="flip-card__input" name="الإسم"
+                                placeholder="الإسم ثلاثي" type="text" minlength="10">
+                            <input required id="UserNumber" class="flip-card__input" name="رقم الهاتف"
+                                placeholder="رقم الهاتف" type="number" minlength="10">
+                            <input required id="UserEmail" class="flip-card__input" name="البريد الإلكتروني"
+                                placeholder="البريد الإلكتروني" type="email" minlength="15">
+                            <input required id="UserPassword" class="flip-card__input" name="الباسورد"
+                                placeholder="الباسورد" type="password" minlength="6">
+                            <button class="flip-card__btn">تسجيل الدخول</button>
+                        </form>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <script src="./JS/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('https://formcarry.com/s/1NgWuRbfGwv', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        okmassage.style.top = "-10px";
+                        window.localStorage.setItem("UserLogined", "true")
+                        window.localStorage.setItem("UserName", UserName.value)
+                        window.localStorage.setItem("UserEmail", UserEmail.value)
+                        window.localStorage.setItem("UserNumber", UserNumber.value)
+                        window.localStorage.setItem("UserPassword", UserPassword.value)
+                        setTimeout(function () {
+                            window.location.href = "index.html";
+                        }, 3000);
+                    } else {
+                        nomassage.style.top = "-10px";
+                        setTimeout(function () {
+                            nomassage.style.top = "-80px";
+                        }, 4000);
+                    }
+                })
+                .catch(error => {
+                    alert('حدث خطأ، يرجى المحاولة لاحقاً.');
+                    console.error(error);
+                });
+        });
+        if (localStorage.getItem("UserLogined") === "true") {
+            window.location.replace("./index.html");
+        }
+    </script>
+</body>
+
+</html>
