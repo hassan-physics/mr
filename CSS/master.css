@@ -549,8 +549,7 @@ footer h3 a {
 }
 
 .coursesBox .card .title {
-    margin-right: 15px;
-    padding: 5px 0;
+    padding: 5px 12px;
 }
 
 .coursesBox .card .info-box {
@@ -596,4 +595,5 @@ footer h3 a {
 .idBTN{
     position: absolute;
     bottom: 60px;
+
 }
