@@ -136,8 +136,7 @@ header div {
 }
 
 .card .title {
-    margin-right: 15px;
-    padding: 5px 0;
+    padding: 5px 12px;
 }
 
 .card .info-box {
@@ -399,4 +398,5 @@ footer h3 a {
     font-family: "Bitcount Single", sans-serif;
     font-weight: 700;
     color: #ffffff;
+
 }
