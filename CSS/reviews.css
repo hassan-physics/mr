@@ -110,7 +110,7 @@ header div {
 }
 
 .card {
-    background: url(../Pictures/sky.jpg);
+    /* background: url(../Pictures/sky.jpg); */
     background-color: black;
     background-repeat: no-repeat;
     background-position: center;
@@ -149,7 +149,7 @@ header div {
 }
 
 .Xcard {
-    background: url(../Pictures/sky.jpg);
+    /* background: url(../Pictures/sky.jpg); */
     background-color: black;
     background-repeat: no-repeat;
     background-position: center;
@@ -402,3 +402,4 @@ footer h3 a {
     color: #ffffff;
 
 }
+
